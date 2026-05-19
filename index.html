@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>System Trace Analyzer</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Share+Tech+Mono&display=swap" rel="stylesheet">
+<style>
+*{
+  margin:0;
+  padding:0;
+  box-sizing:border-box;
+}
+
+body{
+  background:#030303;
+  color:#00ff88;
+  font-family:"Share Tech Mono", monospace;
+  overflow:hidden;
+}
+
+canvas{
+  position:fixed;
+  inset:0;
+  z-index:-1;
+}
+
+.scanline{
+  position:fixed;
+  inset:0;
+  background:linear-gradient(
+    transparent 50%,
+    rgba(0,255,120,0.03) 50%
+  );
+  background-size:100% 4px;
+  pointer-events:none;
+  animation:scan 8s linear infinite;
+}
+
+@keyframes scan{
+  from{transform:translateY(0)}
+  to{transform:translateY(10px)}
+}
+
+.glow{
+  text-shadow:
+    0 0 5px #00ff88,
+    0 0 10px #00ff88,
+    0 0 20px #00ff88;
+}
+
+.container{
+  width:100%;
+  height:100vh;
+  padding:30px;
+  overflow:auto;
+}
+
+.topbar{
+  display:flex;
+  justify-content:space-between;
+  margin-bottom:25px;
+</html>
